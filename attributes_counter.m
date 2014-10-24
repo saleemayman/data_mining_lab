@@ -1,0 +1,24 @@
+function [ barInput ] = attributes_counter( Attributes,Data,index )
+%ATTRIBUTES_COUNTER
+%The function takes the index of the desired attribute as input
+%and outputs a vector containing the nummber of instances per attribute
+%value, which is fit to be represented for example with the bar function.
+% ATTRIBUTES: cell containing all the different possible values of the
+%             attribute
+% DATA:       cell containing all the different instances
+% INDEX:      integer between 1 and 23
+% BARINPUT:   array of size(numAttributesValues,1)
+
+barInput=zeros(size(Attributes{index},2),1);
+for i=1:size(Data,1)
+    for j=1:size(Attributes{index},2);
+        if Data{i}{index}==Attributes{index}{j}
+            barInput(j)=barInput(j)+1;
+            break;
+        end
+    end
+end
+
+
+end
+
