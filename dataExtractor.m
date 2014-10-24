@@ -9,13 +9,15 @@ Data{i}=strsplit(C{:}{i},',');
 end
 
 %% Attributes
-%also creation of an attribute cell, listing all possible attributes and
+%Creation of an attribute cell, listing all possible attributes and
 %their values, plus their labels
 Labels=cell(23,1);
 Attributes=cell(23,1);
 AttributesTypes=cell(23,1);
 
-%Example
+%TODO: just go to agaricus-lepiota.names (dataset description file) and
+%fill in the different values accordingly
+%Example for the first attribute
 index=1;
 AttributesTypes{index}='class';
 Attributes{index}={'e','p'};
