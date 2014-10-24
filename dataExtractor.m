@@ -13,39 +13,41 @@ end
 %their values, plus their labels
 Labels=cell(23,1);
 Attributes=cell(23,1);
-AttributesType=cell(23,1);
+AttributesTypes=cell(23,1);
+
+%Example
 index=1;
-AttributesType{index}='class';
+AttributesTypes{index}='class';
 Attributes{index}={'e','p'};
 Labels{index}={'edible','poisonous'};
 
 %% 18-23
 index=18;
-AttributesType{index}='veil-color';
+AttributesTypes{index}='veil-color';
 Attributes{index}={'n','o','w','y'};
 Labels{index}={'brown','orange','white','yellow'};
 
 index=19;
-AttributesType{index}='ring-number';
+AttributesTypes{index}='ring-number';
 Attributes{index}={'n','o','t'};
 Labels{index}={'none','one','two'};
 
 index=20;
-AttributesType{index}='ring-type';
+AttributesTypes{index}='ring-type';
 Attributes{index}={'c','e','f','l','n','p','s','z'};
 Labels{index}={'cobwebby','evanescent','flaring','large','none','pendant','sheathing','zone'};
 
 index=21;
-AttributesType{index}='spore-print-color';
+AttributesTypes{index}='spore-print-color';
 Attributes{index}={'k','n','b','h','r','o','u','w','y'};
 Labels{index}={'black','brown','buff','chocolate','green','orange','purple','white','yellow'};
 
 index=22;
-AttributesType{index}='population';
+AttributesTypes{index}='population';
 Attributes{index}={'a','c','n','s','v','y'};
 Labels{index}={'abundant','clustered','numerous','scattered','several','solitary'};
 
 index=23;
-AttributesType{index}='habitat';
+AttributesTypes{index}='habitat';
 Attributes{index}={'g','l','m','p','u','w','d'};
 Labels{index}={'grasses','leaves','meadow','path','urban','waste','woods'};
