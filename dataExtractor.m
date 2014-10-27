@@ -17,38 +17,34 @@ AttributesTypes=cell(23,1);
 
 %TODO: just go to agaricus-lepiota.names (dataset description file) and
 %fill in the different values accordingly
-%Example for the first attribute
+
+%% 1-5
 index=1;
 AttributesTypes{index}='class';
 Attributes{index}={'e','p'};
 Labels{index}={'edible','poisonous'};
 
-% %% 1-5
-% index = ;
-% AttributesTypes{index} = '';
-% Attributes{index} = {'', '', '', ''};
-% Labels{index} = {'', '', '', ''};
-% 
-% index = ;
-% AttributesTypes{index} = '';
-% Attributes{index} = {'', '', '', ''};
-% Labels{index} = {'', '', '', ''};
-% 
-% index = ;
-% AttributesTypes{index} = '';
-% Attributes{index} = {'', '', '', ''};
-% Labels{index} = {'', '', '', ''};
-% 
-% index = ;
-% AttributesTypes{index} = '';
-% Attributes{index} = {'', '', '', ''};
-% Labels{index} = {'', '', '', ''};
-% 
-% index = ;
-% AttributesTypes{index} = '';
-% Attributes{index} = {'', '', '', ''};
-% Labels{index} = {'', '', '', ''};
-% 
+index=2;
+AttributesTypes{index}='cap-shape';
+Attributes{index}={'b','c','x','f','k','s'};
+Labels{index}={'bell','conical','convex','flat','knobbed','sunken'};
+
+index=3;
+AttributesTypes{index}='cap-surface';
+Attributes{index}={'f','g','y','s'};
+Labels{index}={'fibrous','grooves','scaly','smooth'};
+
+index=4;
+AttributesTypes{index}='cap-color';
+Attributes{index}={'n','b','c','g','r','p','u','e','w','y'};
+Labels{index}={'brown','buff','cinnamon','gray','green','pink','purple','red','white','yellow'};
+
+index=5;
+AttributesTypes{index}='presence-of-bruises';
+Attributes{index}={'t','f'};
+Labels{index}={'bruises','no'};
+
+%% 6-11
 
 %% 12-17
 index = 12;
