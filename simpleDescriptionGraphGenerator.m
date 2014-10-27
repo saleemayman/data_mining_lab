@@ -17,6 +17,7 @@ barInput=barInput/(1.0*size(Data,1));%percentages are great
 stDev=std(barInput);%standard deviation
 
 %open a window with title AttributesTypes{index} to put our histogram in
+<<<<<<< HEAD
 f=figure('Name',AttributesTypes{index});
 hold on
 lineColorMap=colormap('lines');%lineColorMap is basically a dictionnary of colors
@@ -49,5 +50,26 @@ if export
     hgexport(gcf,exportFigureName, hgexport('factorystyle'), 'Format', 'eps');
     fprintf('Figure successfully exported as %s \n',exportFigureName);
 end
+=======
+hFig = figure('Name',AttributesTypes{index});   % hFig is the figure handle
+                                                % for saving the figure
+
+plotHandle=bar(barInput);%creates our Histogram
+hold on;%means we can still add options to our Histogram
+
+%an nice title floating above the bars
+title(sprintf('Distribution of the %s attribute',AttributesTypes{index}));
+
+%for the ordinate axis
+ylabel('Percentage of instances having the value')
+
+%Labels under the graphs
+set(gca,'XTickLabel',Labels{index})
+
+% create filename for attribute figure
+figFileName = [num2str(index) '_' AttributesTypes{index}];
+saveas(hFig, figFileName, 'png')
+
+>>>>>>> 9e73a0ec78e75000fa0f4bbd0c5e6a1cdfbc1bc7
 end
 
