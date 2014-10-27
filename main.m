@@ -29,6 +29,3 @@ for index = startIndex:endIndex
 end
 disp('Distribution for attributes plotted and saved.');
 
-% TODO in S-Bahn:
-%   - add all sttribute labels in dataExtractor.m
-%   - remove "-" from all labels and replace with underscore "_"
