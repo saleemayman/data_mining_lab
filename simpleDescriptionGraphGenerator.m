@@ -46,16 +46,16 @@ set(gca,'XTick',1:numel(Attributes{index}));
 set(gca,'XTickLabel',sortedLabels);
 set(gca,'FontSize',14);
 %add some info
-set(0, 'DefaulttextInterpreter', 'tex');%for sigma to be displayed
-h = axes('Position',[0 0 1 1],'Visible','off');
-str(1) = {'Standard Deviation:'};
-str(2) = {sprintf('%s = %.4f','\sigma',std(barInput))};
-set(gcf,'CurrentAxes',h)
-text(.65,.8,str,'FontSize',14)
+%set(0, 'DefaulttextInterpreter', 'tex');%for sigma to be displayed
+%h = axes('Position',[0 0 1 1],'Visible','off');
+%str(1) = {'Standard Deviation:'};
+%str(2) = {sprintf('%s = %.4f','\sigma',std(barInput))};
+%set(gcf,'CurrentAxes',h)
+%text(.65,.8,str,'FontSize',14)
 %export the figure
 if export
-    exportFigureName=sprintf('%i_attribute_valDistrib.eps',index);
-    hgexport(gcf,exportFigureName, hgexport('factorystyle'), 'Format', 'eps');
+    exportFigureName=sprintf('%i_attribute_valDistrib.png',index);
+    hgexport(gcf,exportFigureName, hgexport('factorystyle'), 'Format', 'png');
     fprintf('Figure successfully exported as %s \n',exportFigureName);
 end
 end
