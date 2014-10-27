@@ -6,10 +6,9 @@ disp('Workspace cleared and ready to go.');
 %% Load the datas, labels and stuff
 run dataExtractor.m
 disp('dataExtractor successful.');
-%% Generate the graphs: * * * * * For a Single Attribute * * * * *
+%% Generate the graphs
 
 %index of the attribute you want to plot
-<<<<<<< HEAD
 index=21;
 [barInput,plotHandle,stDev]=simpleDescriptionGraphGeneratorNew(index,Data,Attributes,Labels,AttributesTypes,true);
 
@@ -24,74 +23,3 @@ for i=1:numel(indexAttr)
     stDevs(i)=stDev;
     barInputs{i}=barInput;
 end
-%% Work!
-close all
-[sortedStDevs, indexStd]=sort(stDevs,'descend');
-sortAttrIndex=indexAttr(indexStd);
-sortedNames=cell(numel(sortAttrIndex),1);
-for j=1:numel(sortAttrIndex)
-    sortedNames{j}=AttributesTypes{sortAttrIndex(j)};
-end
-%TOP THREE
-num=10;
-fprintf('top %i are:',num);
-for i=1:num
-    fprintf('%i# %s (%i),std=%.4f \n',i,sortedNames{i},sortAttrIndex(i),sortedStDevs(i));
-end
-
-%create matrix with the three coordinates
-visuCoords=zeros(numel(Data),3);
-for k=1:numel(Data)
-    visuCoords(k,:)=[Data{k}{sortAttrIndex(2)},...
-                 Data{k}{sortAttrIndex(3)},...
-                 Data{k}{sortAttrIndex(4)}];
-             
-    
-end
-%Now counts how many similar
-[uniqueCoords,ivC,iuC]=unique(visuCoords,'rows');
-% all the different  functions are tricky, hence
-counter=zeros(size(uniqueCoords,1),1);
-colors = autumn(size(uniqueCoords,1));
-for i=1:size(uniqueCoords,1)
-    for j=1:size(visuCoords,1)
-        if isequal(uniqueCoords(i,:),visuCoords(j,:))
-            counter(i)=counter(i)+1;
-        end
-    end
-end
-[sortedCounter,indxsC]=sort(counter);
-sortUnqCoords=uniqueCoords(indxsC,:);
-scatter3(sortUnqCoords(:,1),sortUnqCoords(:,2),sortUnqCoords(:,3),sortedCounter,colors,'filled')
-colorbar%('YTick', unique(sortedCounter), 'YTickLabel', 1:numel(unique(sortedCounter)));
-%scatter3(uniqueCoords(:,1),uniqueCoords(:,2),uniqueCoords(:,3),counter,colors,'filled')
-%plot3(visuCoords(:,1),visuCoords(:,2),visuCoords(:,3),'.r')
-%scatter3(visuCoords(:,1),visuCoords(:,1),visuCoords(:,1),ones(size(x)),data,'filled')
-%scatter3(x,y,z,data.^-2,data,'filled')
-
-% for i=1:23 
-%     disp(i) 
-%     sum(barInputs{i}) 
-% end 
-=======
-index=1;
-[barInput,plotHandle]=simpleDescriptionGraphGenerator(index,Data,Attributes,Labels,AttributesTypes);
-disp('Distribution for attribute plotted and saved.');
-%Note: this is just to show you how it works. Feel free to modify it
-
-%% Generate the graphs: * * * * * For Multiple Attributes * * * * *
-
-startIndex = 12;
-endIndex = 17;
-
-% loop through the above index range; plot the distributions and save each
-% plot as a .png
-for index = startIndex:endIndex
-    
-    [barInput, plotHandle] = simpleDescriptionGraphGenerator(index,...
-        Data, Attributes, Labels, AttributesTypes);
-    
-end
-disp('Distribution for attributes plotted and saved.');
-
->>>>>>> 9e73a0ec78e75000fa0f4bbd0c5e6a1cdfbc1bc7

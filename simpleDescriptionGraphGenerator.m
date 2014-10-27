@@ -1,4 +1,4 @@
-function [barInput,plotHandle,stDev] = simpleDescriptionGraphGeneratorNew(index,Data,Attributes,Labels,AttributesTypes,export)
+function [barInput,plotHandle,stDev] = simpleDescriptionGraphGenerator(index,Data,Attributes,Labels,AttributesTypes,export)
 %simpleDescriptionGraphGenerator: generate a plot of the repartition of the
 %values of attribute 'index'
 %   index          : the one of the target attribute
@@ -12,12 +12,14 @@ function [barInput,plotHandle,stDev] = simpleDescriptionGraphGeneratorNew(index,
 %   plotHandle: handle of the generated plot
 %   stDev: standard deviation of the normalized instance per value vector
 
+
+
+
 barInput=attributes_counter(index,Data,Attributes);%creates the inventory of instances per value
 barInput=barInput/(1.0*size(Data,1));%percentages are great
 stDev=std(barInput);%standard deviation
 
 %open a window with title AttributesTypes{index} to put our histogram in
-<<<<<<< HEAD
 f=figure('Name',AttributesTypes{index});
 hold on
 lineColorMap=colormap('lines');%lineColorMap is basically a dictionnary of colors
@@ -43,33 +45,18 @@ xlim([0.5 (numel(Attributes{index})+0.5)]);
 set(gca,'XTick',1:numel(Attributes{index}));
 set(gca,'XTickLabel',sortedLabels);
 set(gca,'FontSize',14);
-
+%add some info
+set(0, 'DefaulttextInterpreter', 'tex');%for sigma to be displayed
+h = axes('Position',[0 0 1 1],'Visible','off');
+str(1) = {'Standard Deviation:'};
+str(2) = {sprintf('%s = %.4f','\sigma',std(barInput))};
+set(gcf,'CurrentAxes',h)
+text(.65,.8,str,'FontSize',14)
 %export the figure
 if export
     exportFigureName=sprintf('%i_attribute_valDistrib.eps',index);
     hgexport(gcf,exportFigureName, hgexport('factorystyle'), 'Format', 'eps');
     fprintf('Figure successfully exported as %s \n',exportFigureName);
 end
-=======
-hFig = figure('Name',AttributesTypes{index});   % hFig is the figure handle
-                                                % for saving the figure
-
-plotHandle=bar(barInput);%creates our Histogram
-hold on;%means we can still add options to our Histogram
-
-%an nice title floating above the bars
-title(sprintf('Distribution of the %s attribute',AttributesTypes{index}));
-
-%for the ordinate axis
-ylabel('Percentage of instances having the value')
-
-%Labels under the graphs
-set(gca,'XTickLabel',Labels{index})
-
-% create filename for attribute figure
-figFileName = [num2str(index) '_' AttributesTypes{index}];
-saveas(hFig, figFileName, 'png')
-
->>>>>>> 9e73a0ec78e75000fa0f4bbd0c5e6a1cdfbc1bc7
 end
 
