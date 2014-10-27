@@ -23,6 +23,64 @@ AttributesTypes{index}='class';
 Attributes{index}={'e','p'};
 Labels{index}={'edible','poisonous'};
 
+% %% 1-5
+% index = ;
+% AttributesTypes{index} = '';
+% Attributes{index} = {'', '', '', ''};
+% Labels{index} = {'', '', '', ''};
+% 
+% index = ;
+% AttributesTypes{index} = '';
+% Attributes{index} = {'', '', '', ''};
+% Labels{index} = {'', '', '', ''};
+% 
+% index = ;
+% AttributesTypes{index} = '';
+% Attributes{index} = {'', '', '', ''};
+% Labels{index} = {'', '', '', ''};
+% 
+% index = ;
+% AttributesTypes{index} = '';
+% Attributes{index} = {'', '', '', ''};
+% Labels{index} = {'', '', '', ''};
+% 
+% index = ;
+% AttributesTypes{index} = '';
+% Attributes{index} = {'', '', '', ''};
+% Labels{index} = {'', '', '', ''};
+% 
+
+%% 12-17
+index = 12;
+AttributesTypes{index} = 'stalk-root';
+Attributes{index} = {'b', 'c', 'u', 'e', 'z', 'r', 'Q'};
+Labels{index} = {'bulbous', 'club', 'cup', 'equal', 'rhizomorphs', 'rooted', 'missing'};
+
+index = 13;
+AttributesTypes{index} = 'stalk-surface-above-ring';
+Attributes{index} = {'f', 'y', 'k', 's'};
+Labels{index} = {'fibrous','scaly','silky','smooth'};
+
+index = 14;
+AttributesTypes{index} = 'stalk-surface-below-ring';
+Attributes{index} = {'f', 'y', 'k', 's'};
+Labels{index} = {'fibrous','scaly','silky','smooth'};
+
+index = 15;
+AttributesTypes{index} = 'stalk-color-above-ring';
+Attributes{index} = {'n', 'b', 'c', 'g', 'o', 'p', 'e', 'w', 'y'};
+Labels{index} = {'brown', 'buff', 'cinnamon', 'gray', 'orange', 'pink', 'red', 'white', 'yellow'};
+
+index = 16;
+AttributesTypes{index} = 'stalk-color-below-ring';
+Attributes{index} = {'n', 'b', 'c', 'g', 'o', 'p', 'e', 'w', 'y'};
+Labels{index} = {'brown', 'buff', 'cinnamon', 'gray', 'orange', 'pink', 'red', 'white', 'yellow'};
+
+index = 17;
+AttributesTypes{index} = 'veil-type';
+Attributes{index} = {'p', 'u'};
+Labels{index} = {'partial', 'universal'};
+
 %% 18-23
 index=18;
 AttributesTypes{index}='veil-color';

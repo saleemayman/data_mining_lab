@@ -17,16 +17,24 @@ barInput=attributes_counter(index,Data,Attributes);%creates the inventory of ins
 barInput=barInput/(1.0*size(Data,1));%percentages are great
 
 %open a window with title AttributesTypes{index} to put our histogram in
-figure('Name',AttributesTypes{index})
+hFig = figure('Name',AttributesTypes{index});   % hFig is the figure handle
+                                                % for saving the figure
 
 plotHandle=bar(barInput);%creates our Histogram
 hold on;%means we can still add options to our Histogram
 
 %an nice title floating above the bars
 title(sprintf('Distribution of the %s attribute',AttributesTypes{index}));
+
 %for the ordinate axis
 ylabel('Percentage of instances having the value')
+
 %Labels under the graphs
 set(gca,'XTickLabel',Labels{index})
+
+% create filename for attribute figure
+figFileName = [num2str(index) '_' AttributesTypes{index}];
+saveas(hFig, figFileName, 'png')
+
 end
 
