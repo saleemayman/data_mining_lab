@@ -16,7 +16,7 @@ function [barInput,plotHandle,stDev] = simpleDescriptionGraphGenerator(index,Dat
 
 
 barInput=attributes_counter(index,Data,Attributes);%creates the inventory of instances per value
-barInput=barInput/(1.0*size(Data,1));%percentages are great
+barInput=barInput/(1.0*size(Data,1))*100;%percentages are great
 stDev=std(barInput);%standard deviation
 
 %open a window with title AttributesTypes{index} to put our histogram in
@@ -29,7 +29,7 @@ plotHandle=cell(numel(Attributes{index}),1);%to stock all our different Handle
 for i=1:numel(Attributes{index})
      plotHandle{i}=bar([i], barInputSorted(i),'FaceColor',lineColorMap(i,:));
 end
-f.Position=[f.Position(1),f.Position(2),f.Position(3)+125,f.Position(4)];%resize fig
+f.Position=[f.Position(1),f.Position(2),f.Position(3)+200,f.Position(4)];%resize fig
 %% MAKING THINGS PRETTY WITH UGLY CODE
 
 %For underscores to be displayed as underscores
