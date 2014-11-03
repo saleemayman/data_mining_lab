@@ -8,6 +8,7 @@ for i=1:size(C{:},1)
 Data{i}=strsplit(C{:}{i},',');
 end
 
+
 %% Attributes
 %Creation of an attribute cell, listing all possible attributes and
 %their values, plus their labels
