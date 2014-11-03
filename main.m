@@ -5,6 +5,7 @@ close all
 disp('Workspace cleared and ready to go.');
 %% Load the datas, labels and stuff
 run dataExtractor.m
+
 disp('dataExtractor successful.');
 %% Generate the graphs
 
@@ -12,6 +13,7 @@ disp('dataExtractor successful.');
 index=21;
 [barInput,plotHandle,stDev]=simpleDescriptionGraphGenerator(index,Data,Attributes,Labels,AttributesTypes,true);
 
+disp('Plots successfully generated.');
 %Note: this is just to show you how it works. Feel free to modify it
 %(put index in a loop, etc).?
 %% Now let's look for clusters
@@ -23,3 +25,11 @@ for i=1:numel(indexAttr)
     stDevs(i)=stDev;
     barInputs{i}=barInput;
 end
+
+disp('Clustering complete.');
+%% convert data into matrix form (8124x23 char matrix) for easy access
+startIndex = 1;
+endIndex = 10;
+[dataMatrix, structAttributeData] = structAndMatrixDataGenerator(startIndex, endIndex);
+
+disp('Data in matrix and struct array generated.');

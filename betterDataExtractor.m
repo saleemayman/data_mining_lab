@@ -1,14 +1,18 @@
+%SAME AS DATA EXTRACTOR, BUT NOT CELLS AS AN OUTPUT FOR SPEED & SWAG
+%DATA BECOMES A MATRIX
+%Conversion: num=cast(attribute,'uint8')/attribute=char(num);
+
 %Script for the extraction of the data from the agaricus-lepiota.txt file, the output
 %Data being a cell structure.
 fid = fopen('agaricus-lepiota.txt');
 C = textscan(fid,'%s'); % Read data skipping header
 fclose(fid);
-Data=cell(size(C{:}));
-for i=1:size(C{:},1)
-Data{i}=strsplit(C{:}{i},',');
+numAttr=23;
+Data=zeros(numel(C{:}),numAttr);
+for i=1:numel(C{:})
+interm=strjoin(strsplit(C{:}{i},','),'');
+Data(i,:)=cast(interm,'uint8');
 end
-
-
 %% Attributes
 %Creation of an attribute cell, listing all possible attributes and
 %their values, plus their labels
