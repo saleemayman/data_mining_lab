@@ -21,7 +21,7 @@
 @attribute gill-size {broad, narrow}
 @attribute gill-color {black, brown, buff, chocolate, gray, green, orange, pink, purple, red, white, yellow}
 @attribute stalk-shape {enlarging, tapering}
-@attribute stalk-root {bulbous, club, cup, equal, rhizomorphs, rooted, ?}
+@attribute stalk-root {bulbous, club, cup, equal, rhizomorphs, rooted}
 @attribute stalk-surface-above-ring {fibrous, scaly, silky, smooth}
 @attribute stalk-surface-below-ring {fibrous, scaly, silky, smooth}
 @attribute stalk-color-above-ring {brown, buff, cinnamon, gray, orange, pink, red, white, yellow}

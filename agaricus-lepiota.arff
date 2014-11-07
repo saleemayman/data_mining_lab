@@ -21,7 +21,7 @@
 @attribute gill-size {b, n}
 @attribute gill-color {k, n, b, h, g, r, o, p, u, e, w, y}
 @attribute stalk-shape {e, t}
-@attribute stalk-root {b, c, u, e, z, r, ?}
+@attribute stalk-root {b, c, u, e, z, r}
 @attribute stalk-surface-above-ring {f, y, k, s}
 @attribute stalk-surface-below-ring {f, y, k, s}
 @attribute stalk-color-above-ring {n, b, c, g, o, p, e, w, y}
