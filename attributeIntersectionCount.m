@@ -31,7 +31,7 @@ for i_mainAttr = 1:numAttr
     id_field = ['a' num2str(i_mainAttr)];                 % attribute field name
     attrConditionalProb.(id_field) = struct();         % create attribute field
     
-    for i_secdryAttr = (i_mainAttr + 1):numAttr
+    for i_secdryAttr = 1:numAttr       % or (i_mainAttr + 1):numAttr
         subId_field = ['a' num2str(i_mainAttr) '_' 'a' num2str(i_secdryAttr)];
         
         r = numel(attributes{1, 1}{i_mainAttr});     % contingent table rows
