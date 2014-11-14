@@ -1,5 +1,5 @@
 close all;
-[attrConditionalProb] = attributeIntersectionCount();
+[attrConditionalProb] = attributeIntersectionCountChi();
 % Generating the Structural Matrix
 
 % generate 23 x 23 matrix with chi-square values for each of our attribute
