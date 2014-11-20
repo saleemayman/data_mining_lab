@@ -16,10 +16,11 @@ end
 
 % visualize the matrix
 figure
-imagesc(similarityMatrix);
+imagesc(newSimMat);
 axis equal
 axis([1 8124 1 8124])
 set(gca,'xtick',[])
 set(gca,'xticklabel',[])
 set(gca,'ytick',[])
 set(gca,'yticklabel',[])
+title('Naive Similarity Matrix')
