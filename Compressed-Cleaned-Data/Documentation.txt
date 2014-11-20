@@ -1,0 +1,18 @@
+***Documentation***
+
+--Cleaned--
+
+Removed only redundant attributes + characteristics, so here no information is lost.
+
+--Compressed--
+
+Removed also attributes which have over 95% of the samples in one characterisation. 
+This should be usefull for frequent item set method and maybe some other statistics which had issues with those attributes.
+
+The .arff files (Weka) are ready to go, as labels + data is in one file.
+The .txt files (Matlab) have removed attributes, but not removed characteristics. 
+Those are stored in attribute_headers_compressed.
+Also if you need .data files, just copy paste out of the .txt files, as im having a hard time to work on .data files
+and i dont need it for my algorithms. 
+
+For more detailed information look on the wiki
