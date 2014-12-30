@@ -1,0 +1,48 @@
+% 1. Title: Rogers Mushrooms
+%
+% 2. Sources:
+%	http://www.rogersmushrooms.com/
+
+
+
+@relation extracted.mushroom.database
+
+@attribute class {e, p}
+@attribute cap-shape {b, c, x, f, k, s}
+@attribute cap-surface {f, g, y, s}
+@attribute cap-color {n, b, c, g, r, p, u, e, w, y}
+@attribute presence_of_bruises {t, f}
+@attribute odor {a, l, c, y, f, m, n, p, s}
+@attribute gill-attachment {a, d, f, n}
+@attribute gill-spacing {c, w, d}
+@attribute gill-size {b, n}
+@attribute gill-color {k, n, b, h, g, r, o, p, u, e, w, y}
+@attribute stalk-shape {e, t}
+@attribute stalk-root {b, c, u, e, z, r}
+@attribute stalk-surface-above-ring {f, y, k, s}
+@attribute stalk-surface-below-ring {f, y, k, s}
+@attribute stalk-color-above-ring {n, b, c, g, o, p, e, w, y}
+@attribute stalk-color-below-ring {n, b, c, g, o, p, e, w, y}
+@attribute veil-type {p, u}
+@attribute veil-color {n, o, w, y}
+@attribute ring-number {n, o, t}
+@attribute ring-type {c, e, f, l, n, p, s, z}
+@attribute spore-print-color {k, n, b, h, r, o, u, w, y}
+@attribute population {a, c, n, s, v, y}
+@attribute habitat {g, l, m, p, u, w, d}
+
+@data
+p,x,?,b,?,?,f,c,n,w,t,c,s,s,w,w,p,w,?,?,w,y,d
+p,x,y,n,?,p,?,?,?,w,?,?,y,y,w,w,?,?,n,?,w,?,d
+p,x,y,n,?,?,?,?,?,w,?,?,y,y,n,n,?,?,o,?,w,?,d
+p,x,s,n,?,a,?,?,?,w,?,?,s,s,w,w,?,n,?,?,w,?,g
+p,c,s,n,?,?,?,?,?,w,?,e,s,s,w,n,?,n,?,?,w,?,d
+p,x,y,n,?,s,?,?,?,w,?,b,?,?,o,o,?,?,o,?,w,?,d
+p,x,y,w,?,s,?,?,?,?,?,?,?,?,w,n,?,?,o,?,w,?,d
+p,x,y,w,t,?,f,c,?,w,e,b,s,y,w,n,p,w,o,e,w,y,d
+p,c,y,n,?,m,?,?,?,w,?,?,f,f,w,n,?,?,o,?,w,?,d
+p,c,y,n,?,m,?,?,?,w,?,c,?,?,w,w,?,?,o,?,w,?,d
+p,x,y,n,?,?,f,w,b,w,e,b,s,y,w,n,p,w,o,c,w,?,d
+p,c,y,c,?,p,f,c,n,w,?,?,s,s,w,n,p,w,o,c,w,y,d
+p,c,y,n,?,p,?,?,?,w,?,?,y,y,w,n,?,?,o,?,w,?,d
+p,x,y,w,?,a,?,?,?,w,?,?,?,?,w,n,?,?,o,?,w,?,d
