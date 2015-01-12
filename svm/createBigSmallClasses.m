@@ -8,7 +8,7 @@ function [entireDataBigSmall, bigSetDataMatrix, smallSetDataMatrix,...
 % Does the following:
 % 1. Divides habitat into 2 classes: (b)ig and (s)mall
 % 2. Separates the small and big habitat class data
-% 3. To all the instances replaces the habitat values by (s) or (b)
+% 3. For all the instances replaces the habitat values by (s) or (b)
 % 4. Modifies the Attribute labels for the new attribute 'belongs_to'
 
 attrIdx = find(ismember(AttributesTypes, target_attribute, 'legacy'));
@@ -65,21 +65,6 @@ disp(['size Data: ' num2str(numel(entireDataBigSmall(:,1)))...
     ', small: ' num2str(numel(smallSetDataMatrix(:,1)))...
     ', size big: ' num2str(numel(bigSetDataMatrix(:,1)))...
     ', small Attr.: ' char(smallSubAttr)' ', big Attr.: ' char(bigSubAttr)'])
-
-end
-
-
-function [outputData] = givenAttrDataExtractor(inputData, attributeIn, attrIdx)
-
-counts = numel(attributeIn);
-
-outputData = [];
-for i = 1:counts
-    subAttrVal = attributeIn{1, i};
-    subAttrVal_uint8 = cast(subAttrVal, 'uint8');
-    positiveInstances = ismember(inputData(:, attrIdx), subAttrVal_uint8);
-    outputData = [outputData; inputData(positiveInstances, :)];
-end
 
 end
 

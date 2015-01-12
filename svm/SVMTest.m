@@ -1,4 +1,4 @@
-function [svmClassification, confMatrix, accuracy] = SVMTest(model, inputData, targetData, targetClassLabel, isDisp)
+function [svmPerf, confMatrix, accuracy] = SVMTest(model, inputData, targetData, targetClassLabel, isDisp)
 
 %modelName = ['Class_' targetClassLabels{j}];
 %target_fits = svmclassify(model, inputData);
@@ -26,16 +26,16 @@ end
 confMatrix = [TN, FP; FN, TP];
 accuracy = 100 * (TP + TN)/(TP + TN + FN + FP);
 
-svmClassification.confMat = confMatrix;
-svmClassification.TP = TP;
-svmClassification.TN = TN;
-svmClassification.FP = FP;
-svmClassification.FN = FN;
+svmPerf.confMat = confMatrix;
+svmPerf.TP_rate = TP/(FN+TP);
+svmPerf.TN_rate = TN/(TN+FP);
+svmPerf.FP_rate = FP/(TN+FP);
+svmPerf.FN_rate = FN/(FN+TP);
 
-if (isDisp == 1)
+if (isDisp == 'y')
     disp(['Class: ' targetClassLabel ' Instances: ' num2str(n)...
-        ' Acc.: ' num2str(accuracy) '% TN: ' num2str(TN/(TN+FP)) ' TP: ' num2str(TP/(FN+TP)) ' Confusion Matrix: '])
-    disp(svmClassification.confMat)
+        ' Acc.: ' num2str(accuracy) '% TN: ' num2str(svmPerf.TN_rate) ' TP: ' num2str(svmPerf.TP_rate) ' Confusion Matrix: '])
+    disp(svmPerf.confMat)
 end
 % disp(['Class: ' targetClassLabel ' Instances: ' num2str(n)...
 %             ' TP: ' num2str(TP_rate) ' TN: ' num2str(TN_rate)...

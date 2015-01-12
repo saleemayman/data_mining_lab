@@ -64,13 +64,16 @@ for j = 1:numModels
     modelName = ['Class_' targetClasses{j}];
     
     % test the respective SVM model
-    [svmPerformance.(modelName), ~, accuracy(j)] = SVMTest(modelSVM.(modelName), inputsTest, targetsTest(:, j), targetClasses{j}, 1);
-
+    if (abs(1 - fractionTrain) > eps)
+        [svmPerformance.(modelName), ~, accuracy(j)] = SVMTest(modelSVM.(modelName), inputsTest, targetsTest(:, j), targetClasses{j}, 'y');
+    else
+        svmPerformance.(modelName) = [];
+    end
+    
     if (XValidate == 'y')
        [modelSVM_CV, avgAccuracy] = svmXValidate(modelSVM, modelName, inputsTest, targetsTest(:, j), targetClasses{j}, 1);
     else
         modelSVM_CV = [];
     end
 end
-
 
