@@ -1,4 +1,5 @@
 function [inputData] = replaceAttrVal(inputData, attrIdx, attrToReplace, attrToReplaceWith)
+% replaces all samples belonging to attrToReplace with a single value attrToReplaceWith
 
 newSubAttrVal_uint8 = cast(attrToReplaceWith, 'uint8');
 
