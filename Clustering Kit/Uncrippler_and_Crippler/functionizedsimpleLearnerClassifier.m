@@ -5,7 +5,7 @@
 %this time
 function [corrAttr2,confusionMatrices,minScores,selectionVector]=functionizedsimpleLearnerClassifier(indexOfThingsToRemove)
 %indexOfThingsToRemove=6;
-disp('Workspace cleared and ready to go.');
+
 %% Load the datas, labels and stuff
 tic
 run betterDataExtractor.m

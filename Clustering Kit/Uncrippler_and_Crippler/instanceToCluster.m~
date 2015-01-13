@@ -1,0 +1,11 @@
+function clusterNumber=instanceToCluster(instance)
+%feed it an instance(1x23 char array), it will return a cluster number
+%you'll need to have the Wmean100run.mat and centroid.mat in your directory for it to work
+load('Wmean100run.mat');
+load('centroids.mat');
+
+%first, we can't consider the missing values.
+%Let's search and destroy. Missing values a
+
+
+end
